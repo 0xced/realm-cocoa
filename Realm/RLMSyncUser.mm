@@ -39,6 +39,7 @@ using namespace realm;
 - (instancetype)initWithAuthServer:(nullable NSURL *)authServer NS_DESIGNATED_INITIALIZER;
 
 @property (nonatomic, readwrite) NSURL *authenticationServer;
+@property (nonatomic, readwrite) BOOL isAdmin;
 
 /**
  All 'refresh handles' associated with Realms opened by this user. A refresh handle is
@@ -257,6 +258,7 @@ using namespace realm;
                     return;
                 }
                 user->_user = sync_user;
+                user.isAdmin = model.refreshToken.tokenData.isAdmin;
                 completion(user, nil);
             }
         } else {

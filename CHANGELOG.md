@@ -348,7 +348,8 @@ GM seed.
 
 ### Enhancements
 
-* None.
+* Add an `isAdmin` property to `RLMSyncUser` indicating whether a user is a
+  Realm Object Server administrator.
 
 ### Bugfixes
 
