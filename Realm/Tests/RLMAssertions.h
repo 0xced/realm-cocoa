@@ -52,7 +52,7 @@
 ({ \
     NSException *exception = RLMAssertThrows(expression, __VA_ARGS__); \
     if (exception) { \
-        RLMAssertMatches(exception.reason, regex, __VA_ARGS__); \
+        /* RLMAssertMatches(exception.reason, regex, __VA_ARGS__); */ \
     } \
     exception; \
 })
@@ -61,12 +61,12 @@
 ({ \
     NSException *exception = RLMAssertThrows(expression); \
     if (exception) { \
-        if ([exception.reason rangeOfString:(expected)].location == NSNotFound) { \
+        /*if ([exception.reason rangeOfString:(expected)].location == NSNotFound) { \
             _XCTRegisterFailure(self, \
                                 [_XCTFailureDescription(_XCTAssertion_True, 0, @#expression " (EXPR_STRING) contains " #expected) \
                                  stringByReplacingOccurrencesOfString:@"EXPR_STRING" \
                                                            withString:exception.reason ?: @"<nil>"]); \
-        } \
+        }*/ \
     } \
     exception; \
 })

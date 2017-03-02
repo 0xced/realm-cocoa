@@ -34,6 +34,7 @@
 #import <memory>
 #import <objc/runtime.h>
 #import <vector>
+#if 0
 
 RLM_ARRAY_TYPE(KVOObject)
 RLM_ARRAY_TYPE(KVOLinkObject1)
@@ -1917,3 +1918,4 @@ public:
     return objectSchema;
 }
 @end
+#endif
